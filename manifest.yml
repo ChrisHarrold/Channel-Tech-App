@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 1024M
+  instances: 1
+  domain: w3ibm.mybluemix.net 
+  name: DMESARecruitDev
+  host: DMESARecruitDev
+  disk_quota: 1024M
+  services:
+  - Cloudant

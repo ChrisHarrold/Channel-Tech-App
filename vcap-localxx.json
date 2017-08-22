@@ -1,0 +1,40 @@
+{
+    "cloudantNoSQLDB": [
+        {
+"credentials":
+            {
+  "username": "c9e8af05-4a9e-4d2b-abe6-96a32c9810e1-bluemix",
+  "password": "0679eaf2e42499dfef5a164808da369bfb6d03583c7d4252e38843d1399dc584",
+  "host": "c9e8af05-4a9e-4d2b-abe6-96a32c9810e1-bluemix.cloudant.com",
+  "port": 443,
+  "url": "https://c9e8af05-4a9e-4d2b-abe6-96a32c9810e1-bluemix:0679eaf2e42499dfef5a164808da369bfb6d03583c7d4252e38843d1399dc584@c9e8af05-4a9e-4d2b-abe6-96a32c9810e1-bluemix.cloudant.com"
+},
+            "credentialslast" :{
+            "username": "d8802dd0-8702-4bc0-aa88-55ae18ec81cc-bluemix",
+            "password": "4c4af8a18241086727a4cf7fbfd2b51f7129ea5b03f51339bac025dbbe29a504",
+            "host": "d8802dd0-8702-4bc0-aa88-55ae18ec81cc-bluemix.cloudant.com",
+            "port": 443,
+            "url": "https://d8802dd0-8702-4bc0-aa88-55ae18ec81cc-bluemix:4c4af8a18241086727a4cf7fbfd2b51f7129ea5b03f51339bac025dbbe29a504@d8802dd0-8702-4bc0-aa88-55ae18ec81cc-bluemix.cloudant.com"
+            },
+            "credentialsf": {
+                "username": "3e921225-6d0f-40e3-8a9e-872ea9e4382f-bluemix",
+                "password": "129c61f73eff15ae26bda28ae59c819eb95ec20434ade9ca99072e436f42389f",
+                "host": "3e921225-6d0f-40e3-8a9e-872ea9e4382f-bluemix.cloudant.com",
+                "port": 443,
+                "url": "https://3e921225-6d0f-40e3-8a9e-872ea9e4382f-bluemix:129c61f73eff15ae26bda28ae59c819eb95ec20434ade9ca99072e436f42389f@3e921225-6d0f-40e3-8a9e-872ea9e4382f-bluemix.cloudant.com"
+            },
+            "syslog_drain_url": null,
+            "label": "cloudantNoSQLDB",
+            "provider": null,
+            "plan": "Lite",
+            "name": "DMESARecruitDev-cloudantNoSQLDB",
+            "tags": [
+                "data_management",
+                "ibm_created",
+                "lite",
+                "ibm_dedicated_public"
+            ]
+        }
+    ]
+}
+

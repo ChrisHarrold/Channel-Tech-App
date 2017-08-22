@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IBM Analytics ESA Recruitment Tracking Application</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/scripts/fields.js"></script>
+	<script type="text/javascript" src="/scripts/util.js"></script>
+	<script type="text/javascript" src="/scripts/add.js"></script>
+    <link rel="stylesheet" href="/style/style.css" />
+    
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body> 
+   <div class = "container" style="width:100%">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Recruit Tracking</a>
+                </div>
+                <!-- 
+				<ul class="nav navbar-nav"><p class="navbar-text">Viewing :</p>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="curview"></span><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="setview" viewname="all_opps">All Opportunities</a></li>
+							<li><a href="#" class="setview" viewname="unassigned_opps">Unassigned Opportunities</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<ul style="display:none" class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+				</ul>
+				
+				<form class="navbar-form navbar-right">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" id="q">
+						<div class="input-group-btn">
+						<button class="btn btn-default" onclick="searchOpportunities();">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+						</div>
+					</div>
+				</form> -->
+			</div>
+        </nav>
+        
+	<div class = "container">
+        <div style="display:none" class = "banner title">
+            <!-- <img class="newappIcon" src="images/logo.png"> -->
+            <p class = "appTitle">IBM Analytics ESA Recruitment Tracking Application</p>
+        </div>
+        <section >
+            <form id='main'>
+                <div class='formDiv'>
+                    <table width="auto">
+                        <tr>
+                            <td width='75%'>
+                                <table width="100%">
+                                    <tr> <!--  Opportunity = Company Name (Required) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtCompanyName'>Company</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtCompanyName' name='company_name' placeholder='Company' required='true'></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Location = Company HQ City (Required) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtCity'>City</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtCity' name='city' placeholder="City" required='true'></textarea>
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr> <!-- State = Company HQ State (Required) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtState'>State abbr.</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtState' name='state' placeholder="State" required='true' maxlength="2"></textarea>
+                                        </td>
+                                    </tr>
+                                     <tr> <!-- Country = Company HQ Country (Required) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtCountry'>Country</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                             <div>
+                                            <select class='formDropDown unselectedDropdown' id='optCountry' name='country' required='true'>
+                                                <option value='' class='unselectedDropdown'>Select a Country</option>
+                                                <option style='color:black' value='US'>US</option>
+                                                <option style='color:black' value='Canada'>Canada</option>
+                                                <option style='color:black' value='WW'>WW</option>
+                                            </select>
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Region = Company HQ Region (Required) (Values are East, West, WW) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='optRegion'>Region</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <div>
+                                            <select class='formDropDown unselectedDropdown' id='optRegion' name='region' required='true'>
+                                                <option value='' class='unselectedDropdown'>Select a region</option>
+                                                <option style='color:black' value='East'>East</option>
+                                                <option style='color:black' value='West'>West</option>
+                                                <option style='color:black' value='WW'>WW</option>
+                                            </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Source = Set to the organization of who is entering this (Values are ESA Team, Briggs Hunters, Xavier Hunters, WW, Jayne Hunters, Digital, MSP/CSP, xBrand) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtSource'>Which Group Provided the Lead?</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <div>
+                                            <select  class='formDropDown unselectedDropdown' id='optSource' required='true' name='source'>
+                                                <option value='' class='unselectedDropdown'>Source</option>
+                                                <option style='color:black' value='ESA Team'>ESA Team</option>
+                                                <option style='color:black' value='Briggs Hunters'>Briggs Hunters</option>
+                                                <option style='color:black' value='Xavier Hunters'>Xavier Hunters</option>
+                                                <option style='color:black' value='Jayne Hunters'>Jayne Hunters</option>
+                                                <option style='color:black' value='WW'>WW</option>
+                                                <option style='color:black' value='Digital'>Digital</option>
+                                                <option style='color:black' value='MSP/CSP'>MSP/CSP</option>
+                                                <option style='color:black' value='xBrand'>xBrand</option>
+                                            </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Source Rep = the user that is entering the opportunity -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtSourceRep'>Who Provided the Lead?</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtSourceRep' name='source_rep' placeholder="Source Rep"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Source Rep = the user that is entering the opportunity -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtSourceRep'>ESA Sales Rep Assigned</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtSourceRep' name='esa_sales_rep' placeholder="ESA Sales Rep"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Notes = This is the state of the sales cycle (values will set to be Qualification to start then I will update to Discovery, Discovery Workshop, POC, Exploring Solutions, Negotiation, Closed, Lost) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtNotes'>Notes</label>
+                                        </td>
+                                        <td class='formFieldValue'>
+                                            <textarea id='txtNotes' name='notes' rows="1" id='notes' placeholder="Notes"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr> <!-- Born on Cloud? = A flag as to whether or not this company is a Born on Cloud provider not necessary now, but maybe make it optional -->
+                                        <td class='formFieldLabel' style="vertical-align: middle">
+                                             <label for='cbBornOnCloud'><span></span>Born on Cloud?</label>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" id="cbBornOnCloud" name='born_on_cloud' />
+                                            <label for="cbBornOnCloud"><span></span></label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style='vertical-align:top;padding-left:10px;'>
+                                <table>
+                                    <tr> <!-- Track = This is the area of interest you have (would like it recommended, but not required) -->
+                                        <td class='formFieldLabel'>
+                                            <label for='txtTrack'>Track</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class='formFieldValue' id='trackcell'>
+                                            <div>
+                                                <input type='checkbox' name='track' id='bigdata' value='Big Data'/>
+                                                <label for="bigdata"><span></span>Big Data</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='databases' value='Databases'/>
+                                                <label for="databases"><span></span>Databases</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='reporting' value='Reporting'/>
+                                                <label for="reporting"><span></span>Reporting</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='predictive_analytics' value='Predictive Analytics'/>
+                                                <label for="predictive_analytics"><span></span>Predictive Analytics</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='content_management' value='Content Management'/>
+                                                <label for="content_management"><span></span>Content Management</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='decision_optimization' value='Decision Optimization'/>
+                                                <label for="decision_optimization"><span></span>Decision Optimization</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='watson' value='Watson'/>
+                                                <label for="watson"><span></span>Watson</label>
+                                            </div>
+                                            <div>
+                                                <input type='checkbox' name='track' id='watson_analytics' value='Watson Analytics'/>
+                                                <label for="watson_analytics"><span></span>Watson Analytics</label>
+                                            </div>
+
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </section>
+        <footer>
+            <div>
+                <button class="button" onclick="saveOpportunity()" title="Save record">Save</button>
+            </div>
+            <div id="loadingImage"></div>
+            <div id="errorDiv" class='errorMsg'></div>
+        </footer>
+        <script type="text/javascript" src="/scripts/fields.js"></script>
+        <script type="text/javascript" src="/scripts/util.js"></script>
+        <script type="text/javascript" src="/scripts/add.js"></script>
+	</div>
+</body>
+</html>

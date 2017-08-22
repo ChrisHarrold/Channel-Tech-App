@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IBM Analytics ESA Recruitment Tracking Application</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/scripts/fields.js"></script>
+	<script type="text/javascript" src="/scripts/util.js"></script>
+	<script type="text/javascript" src="/scripts/index.js"></script>
+	<link rel="stylesheet" href="/style/style.css" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+		tr:nth-child(even) {
+			background: whitesmoke
+		}
+		tr:nth-child(odd) {
+			background: #FFFFFF
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class = "container" style="width:100%">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Recruit Tracking</a>
+				</div>
+				<ul class="nav navbar-nav"><p class="navbar-text">Viewing :</p>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="curview"></span><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="setview" viewname="all_opps">All Opportunities</a></li>
+							<li><a href="#" class="setview" viewname="unassigned_opps">Unassigned Opportunities</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<ul style="display:none" class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+				</ul>
+				
+				<form class="navbar-form navbar-right">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" id="q">
+						<div class="input-group-btn">
+						<button class="btn btn-default" onclick="searchOpportunities();">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</nav>
+	<div style="display:none" class = "banner" >
+		<p class = "appTitle">
+			IBM Analytics E<span id="debug">S</span>A Recruitment Tracking Application
+		</p>
+	</div>
+	<section>
+		<table id='opps' class='records' border='0' cellspacing='0' cellpadding='0'>
+		</table>
+	</section>
+	<footer>
+		<div>
+			<button class="button" onclick="drawOpportunityRow(preprocessData({}))" title="New record">
+				New
+			</button>
+		</div>
+		<div id="loadingImage"></div>
+		<div id="errorDiv" class='errorMsg'></div>
+	</footer>
+
+
+
+	<div id="myImage"><div id="innerImg"></div></div>
+	<br><br><br>
+	</div>
+</body>
+</html>
