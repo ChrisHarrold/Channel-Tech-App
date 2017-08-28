@@ -364,7 +364,7 @@ function disableForm(){
 function init(){
     $("#debug").on("click", function(){ toggleDebug(); });
     
-    var vs = $('a[viewname').click(function(evt){
+    var vs = $('a[viewname]').click(function(evt){
         var $el = $(evt.target);
         var viewname = $el.attr('viewname');
         var displayname = $el.text();

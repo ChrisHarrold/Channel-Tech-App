@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="/scripts/util.js"></script>
 	<script type="text/javascript" src="/scripts/add.js"></script>
     <link rel="stylesheet" href="/style/style.css" />
-    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -61,7 +61,26 @@
         </div>
         <section >
             <form id='main'>
+                
                 <div class='formDiv'>
+
+                    <div class="form-group">
+                        <div class='col-xs-8'>
+                            <label for="email">Email address:</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class='col-xs-8'>
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                   
                     <table width="auto">
                         <tr>
                             <td width='75%'>
@@ -168,11 +187,18 @@
                                     </tr>
                                     <tr> <!-- Born on Cloud? = A flag as to whether or not this company is a Born on Cloud provider not necessary now, but maybe make it optional -->
                                         <td class='formFieldLabel' style="vertical-align: middle">
-                                             <label for='cbBornOnCloud'><span></span>Born on Cloud?</label>
+                                             <!-- <label for='cbBornOnCloud'><span></span>Born on Cloud?</label> -->
                                         </td>
                                         <td>
-                                            <input type="checkbox" id="cbBornOnCloud" name='born_on_cloud' />
-                                            <label for="cbBornOnCloud"><span></span></label>
+                                            <div class="checkbox">
+                                                <label style="font-size: 9pt; padding-left: 0">
+                                                    <input type="checkbox" value="" id="cbBornOnCloud" name='born_on_cloud' >
+                                                    <span class="cr"><i class="cr-icon  glyphicon glyphicon-ok"></i></span>
+                                                    Born on Cloud?
+                                                </label>
+                                            </div>
+                                            <!-- <input type="checkbox" id="cbBornOnCloud" name='born_on_cloud' />
+                                            <label for="cbBornOnCloud"><span></span></label> -->
                                         </td>
                                     </tr>
                                 </table>
@@ -186,6 +212,20 @@
                                     </tr>
                                     <tr>
                                         <td class='formFieldValue' id='trackcell'>
+                                            <div class="checkbox" style="margin:0">
+                                                <label style="font-size: 9pt;">
+                                                    <input type="checkbox" value="test" id="test" name='track' >
+                                                    <span class="cr"><i class="cr-icon  glyphicon glyphicon-ok"></i></span>
+                                                    Test
+                                                </label>
+                                            </div>
+                                            <div class="checkbox"  style="margin:0">
+                                                <label style="font-size: 9pt;">
+                                                    <input type="checkbox" value="test" id="test" name='track' >
+                                                    <span class="cr"><i class="cr-icon  glyphicon glyphicon-ok"></i></span>
+                                                    Test
+                                                </label>
+                                            </div>
                                             <div>
                                                 <input type='checkbox' name='track' id='bigdata' value='Big Data'/>
                                                 <label for="bigdata"><span></span>Big Data</label>
@@ -231,7 +271,7 @@
         </section>
         <footer>
             <div>
-                <button class="button" onclick="saveOpportunity()" title="Save record">Save</button>
+                <button class="btn btn-default" onclick="saveOpportunity()" title="Save record">Save</button>
             </div>
             <div id="loadingImage"></div>
             <div id="errorDiv" class='errorMsg'></div>

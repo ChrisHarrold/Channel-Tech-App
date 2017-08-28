@@ -1,0 +1,43 @@
+
+/* Index.html specific styles */
+tr:nth-child(even) {
+    background: whitesmoke
+}
+tr:nth-child(odd) {
+    background: #FFFFFF
+}
+        
+/* Jquery UI Overrides  */
+ 
+.ui-widget{
+font-size: 9pt
+}
+
+
+.ui-selectmenu-button.ui-button{
+  width: 80px
+}
+
+.ui-button{
+  padding : 2px;
+}
+
+/* Bootstrap */
+
+.bootstrap-select .dropdown-menu {
+  max-width: 200px;
+}
+.bootstrap-select .dropdown-menu span.text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.dropdownText{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+

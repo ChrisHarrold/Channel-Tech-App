@@ -60,7 +60,7 @@ function validateForm(){
             ||                      //OR
             data[field.name]==''    //field is blank - it is on the form, but the user did not fill it in
             ||                      //OR
-            data[field.name]==[]    //field is empty array - it in the form but the user has no selected any options
+            data[field.name]==[]    //field is empty array - it is in the form but the user has no selected any options
         ))                          //THEN
         missingFields.push(field);  //Add to missing field list
     });
@@ -81,8 +81,11 @@ function syncFormWithData(){
     //Start by serializing the form
     data = $('#main').serializeObject();
     //fix up a few fields from serializeObject
-    data.born_on_cloud = (data.born_on_cloud&&data.born_on_cloud=='on')?('true'):('false');
-
+    
+     alert(JSON.stringify( data));
+    // alert(data.born_on_cloud);
+    data.born_on_cloud = (data.born_on_cloud!=undefined)?('true'):('false');
+    alert(data.born_on_cloud);
     fields.forEach(function(field) {
         if(field.multi){
             if(!data[field.name]) data[field.name] = [];
